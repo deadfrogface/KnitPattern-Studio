@@ -43,6 +43,10 @@ header h1 {
   gap: 4px;
 }
 
+.custom-field {
+  display: none;
+}
+
 .field label {
   font-size: 0.9rem;
   font-weight: 500;
@@ -56,6 +60,10 @@ header h1 {
   border: 1px solid #ccc;
   border-radius: 4px;
   min-width: 120px;
+}
+
+#custom-pattern {
+  min-width: 200px;
 }
 
 #btn-generate {
@@ -77,6 +85,44 @@ header h1 {
 #btn-generate:disabled {
   background: #94a3b8;
   cursor: not-allowed;
+}
+
+.output-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.output-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.output-actions button {
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  background: #e2e8f0;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.output-actions button:hover {
+  background: #cbd5e1;
+}
+
+.feedback {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-top: 6px;
+  min-height: 1.2em;
+}
+
+.feedback-error {
+  color: #b91c1c;
 }
 
 .output-section {

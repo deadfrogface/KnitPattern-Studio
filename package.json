@@ -1,6 +1,6 @@
 {
   "name": "knitpattern-studio",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Windows-Desktop-Tool zur automatischen Generierung von Strickanleitungen",
   "main": "main.js",
   "scripts": {

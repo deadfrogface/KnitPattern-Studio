@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,27 +14,43 @@
   <section class="form-section">
     <form id="params-form">
       <div class="field">
-        <label for="maschenanzahl">Maschenanzahl</label>
+        <label for="maschenanzahl">Stitch count</label>
         <input type="number" id="maschenanzahl" name="maschenanzahl" min="1" value="20" required>
       </div>
       <div class="field">
-        <label for="reihenanzahl">Reihenanzahl</label>
+        <label for="reihenanzahl">Row count</label>
         <input type="number" id="reihenanzahl" name="reihenanzahl" min="1" value="10" required>
       </div>
       <div class="field">
-        <label for="mustertyp">Mustertyp</label>
+        <label for="mustertyp">Pattern type</label>
         <select id="mustertyp" name="mustertyp">
-          <option value="glatt-rechts">Glatt rechts</option>
-          <option value="rippenmuster">Rippenmuster</option>
+          <option value="glatt-rechts">Stockinette</option>
+          <option value="kraus-rechts">Garter</option>
+          <option value="rippe-1x1">1x1 Rib</option>
+          <option value="rippe-2x2">2x2 Rib</option>
+          <option value="perlmuster">Seed stitch</option>
+          <option value="halbpatent">Reverse stockinette</option>
+          <option value="custom">Custom Pattern</option>
         </select>
       </div>
-      <button type="submit" id="btn-generate">Anleitung generieren</button>
+      <div class="field custom-field" id="custom-pattern-field">
+        <label for="custom-pattern">Custom (e.g. k2 p2)</label>
+        <input type="text" id="custom-pattern" name="custom-pattern" placeholder="k2 p2  or  k3 p1 k1 p3">
+      </div>
+      <button type="submit" id="btn-generate">Generate pattern</button>
     </form>
   </section>
 
   <section class="output-section">
-    <label for="output">Anleitung (vollständig kopierbar)</label>
-    <textarea id="output" readonly placeholder="Klicken Sie auf „Anleitung generieren“, um die Strickanleitung zu erstellen."></textarea>
+    <div class="output-header">
+      <label for="output">Instructions (fully copyable)</label>
+      <div class="output-actions">
+        <button type="button" id="btn-copy">Copy</button>
+        <button type="button" id="btn-export-txt">Export as .txt</button>
+      </div>
+    </div>
+    <textarea id="output" readonly placeholder="Click „Generate pattern“ to create the knitting instructions."></textarea>
+    <p id="copy-feedback" class="feedback" aria-live="polite"></p>
   </section>
 
   <script src="renderer.js"></script>

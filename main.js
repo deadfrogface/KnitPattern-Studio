@@ -1,5 +1,6 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog } = require('electron');
 const path = require('path');
+const fs = require('fs');
 const generator = require('./generator');
 
 function createWindow() {
@@ -28,6 +29,19 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
 });
 
-ipcMain.handle('generate', (_event, maschenanzahl, reihenanzahl, mustertyp) => {
-  return generator.generateAnleitung(maschenanzahl, reihenanzahl, mustertyp);
+ipcMain.handle('generate', (_event, maschenanzahl, reihenanzahl, mustertyp, customPatternText) => {
+  return generator.generateAnleitung(maschenanzahl, reihenanzahl, mustertyp, customPatternText);
+});
+
+ipcMain.handle('saveTxt', async (event, content) => {
+  const win = BrowserWindow.fromWebContents(event.sender);
+  const { filePath } = await dialog.showSaveDialog(win, {
+    defaultPath: 'KnittingPattern.txt',
+    filters: [{ name: 'Text files', extensions: ['txt'] }]
+  });
+  if (filePath) {
+    fs.writeFileSync(filePath, content, 'utf8');
+    return { saved: true, path: filePath };
+  }
+  return { saved: false };
 });
