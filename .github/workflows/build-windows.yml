@@ -1,3 +1,5 @@
+# Build der Windows-Setup.exe (NSIS). Manuell: Actions → Build Windows Installer → Run workflow.
+# Artifact „KnitPattern-Studio-Windows-Installer“ enthält die Setup.exe.
 name: Build Windows Installer
 
 on:
@@ -27,6 +29,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: KnitPattern-Studio-Windows-Installer
-          path: |
-            dist/*.exe
-            dist/*.msi
+          path: dist/
