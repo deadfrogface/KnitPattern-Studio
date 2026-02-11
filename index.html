@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KnitPattern Studio</title>
+  <link rel="stylesheet" href="renderer.css">
+</head>
+<body>
+  <header>
+    <h1>KnitPattern Studio</h1>
+  </header>
+
+  <section class="form-section">
+    <form id="params-form">
+      <div class="field">
+        <label for="maschenanzahl">Maschenanzahl</label>
+        <input type="number" id="maschenanzahl" name="maschenanzahl" min="1" value="20" required>
+      </div>
+      <div class="field">
+        <label for="reihenanzahl">Reihenanzahl</label>
+        <input type="number" id="reihenanzahl" name="reihenanzahl" min="1" value="10" required>
+      </div>
+      <div class="field">
+        <label for="mustertyp">Mustertyp</label>
+        <select id="mustertyp" name="mustertyp">
+          <option value="glatt-rechts">Glatt rechts</option>
+          <option value="rippenmuster">Rippenmuster</option>
+        </select>
+      </div>
+      <button type="submit" id="btn-generate">Anleitung generieren</button>
+    </form>
+  </section>
+
+  <section class="output-section">
+    <label for="output">Anleitung (vollständig kopierbar)</label>
+    <textarea id="output" readonly placeholder="Klicken Sie auf „Anleitung generieren“, um die Strickanleitung zu erstellen."></textarea>
+  </section>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
