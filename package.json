@@ -6,16 +6,21 @@
   "scripts": {
     "start": "electron .",
     "build": "electron-builder --win",
-    "dist": "electron-builder --win"
+    "dist": "electron-builder --win",
+    "icons": "node build/svg-to-ico.js",
+    "prebuild": "node build/svg-to-ico.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
     "electron": "^28.0.0",
-    "electron-builder": "^24.9.1"
+    "electron-builder": "^24.9.1",
+    "sharp": "^0.33.0",
+    "png-to-ico": "^2.1.1"
   },
   "build": {
+    "icon": "build/icon.ico",
     "publish": null,
     "appId": "com.knitpattern.studio",
     "productName": "KnitPattern Studio",
