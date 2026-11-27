@@ -1,0 +1,19 @@
+{
+  "project": "KnitPattern-Studio",
+  "stage": "Veröffentlicht",
+  "updated": "2026-11-27T09:08:00.000Z",
+  "now": "Version 1.0.0 ist fertig; gerade keine aktive Arbeit.",
+  "version": "1.0.0",
+  "next": [],
+  "blockers": [],
+  "tagline": "Strickanleitungen automatisch erstellen – Maschen, Reihen, Muster.",
+  "color": "#b0707a",
+  "icon": "lucide:scissors",
+  "log": [
+    {
+      "date": "2026-11-27",
+      "summary": "Statusdatei für DFF Studios angelegt (Stand, nächste Schritte, Aussehen).",
+      "by": "Claude Code"
+    }
+  ]
+}
